@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Responsive Pepsi Website Landing Page</title>
+  </head>
+  <body>
+    <section class="bgSection">
+      <header>
+        <a href="#"><img src="images/logo.png" class="logo" alt="logo" /></a>
+        <div class="toggleMenu" onmouseover="menuToggle()"></div>
+        <ul class="navigationMenu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h1>That's What<br /><span>I Like</span></h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+          <a href="#">View All Products</a>
+        </div>
+        <div class="imgBox">
+            <img src="images/pepsi001.png" class="pepsi" alt="pepsi">
+        </div>
+      </div>
+      <ul class="thumbnail">
+          <li><img src="images/pepsi001.png" alt="" onmouseover="imgSlider('images/pepsi001.png');changeBgColor('#0062be')"></li>
+          <li><img src="images/pepsi002.png" alt="" onmouseover="imgSlider('images/pepsi002.png');changeBgColor('#e60c2c')"></li>
+          <li><img src="images/pepsi003.png" alt="" onmouseover="imgSlider('images/pepsi003.png');changeBgColor('#1e1e1e')"></li>
+      </ul>
+      <ul class="social">
+        <li>
+          <a href=""><img src="images/facebook.png"/></a>
+        </li>
+        <li>
+          <a href=""><img src="images/instagram.png"/></a>
+        </li>
+        <li>
+          <a href=""><img src="images/twitter.png"/></a>
+        </li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+
+    /*Image Changer*/
+    function imgSlider(randomImg){
+        document.querySelector(".pepsi").src = randomImg;
+    }
+
+    /*Background Color Change*/
+    function changeBgColor(randomBgColor){
+      const bgSection = document.querySelector(".bgSection");
+      bgSection.style.background = randomBgColor;
+    }
+
+      /*Responsive Toggle Menu*/
+      function menuToggle(){
+        const toggleMenu = document.querySelector(".toggleMenu");
+        const navigationMenu = document.querySelector(".navigationMenu");
+        toggleMenu.classList.toggle("active");
+        navigationMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

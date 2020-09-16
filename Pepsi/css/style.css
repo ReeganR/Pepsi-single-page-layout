@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section{
+    background-color: #0062be;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 100px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; 
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+}
+
+header ul li{
+   list-style: none;
+}
+
+header ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+    display: inline-block;
+    font-weight: 400;
+ }
+
+ .content{
+position: relative;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+ }
+
+ .content .textBox{
+     position: relative;
+     max-width: 600px;
+ }
+
+ .content .textBox h1{
+   color: #fff;
+   font-weight: 900;
+   text-transform: uppercase;
+   font-size: 4em;
+   line-height: 1.5em;
+}
+
+.content .textBox span{
+    font-size: 2em;
+ }
+
+ .content .textBox p{
+    color: #fff;
+ }
+
+ .content .textBox a{
+    display: inline-block;
+    font-weight: 500;
+    color: #111;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+ }
+
+ .content .textBox a:hover{
+    background-color: paleturquoise;
+    transition: .6s;
+ }
+
+ .content .imgBox{
+     width: 600px;
+     display: flex;
+     justify-content: flex-end;
+     padding-right: 50px;
+ }
+
+ .content .imgBox img{
+  max-width: 200px;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+.thumbnail li{
+list-style: none;
+cursor: pointer;
+transition: 0.5s;
+margin: 0 20px;
+display: inline-block;
+}
+
+.thumbnail li:hover{
+    transform: translateY(-15px);
+}
+
+.thumbnail li img{
+   max-width: 40px;
+}
+
+.social{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social li{
+    list-style-type: none;
+}
+
+.social li a{
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter: invert(1);
+}
+
+/* Media Query*/
+@media (max-width: 991px){
+    section{
+        padding: 40px;
+        padding-bottom: 140px;
+    }
+    header{
+        padding: 20px 40px;
+    }
+    header .logo{
+        max-width: 60px;
+    }
+    header ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+    }
+    header ul.active{
+        visibility: visible;
+        opacity: 1;
+        transition: .8s;
+       
+    }
+    header ul li a{
+        color:#111;
+        font-weight: 400;
+        margin: 10px 0;
+        font-size: 2em;
+    }
+    header ul li a:hover{
+        color:#ed0223;
+       
+    }
+    .toggleMenu{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(../images/menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: .4s;
+        z-index: 2;
+    }
+    .toggleMenu.active{
+        background: url(../images/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        filter: invert(1);
+    }
+    .content {
+       flex-direction: column;
+       margin-top: 80px;
+    }
+    .content .textBox {
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+    }
+    .content .textBox h1{
+        font-size: 3em;
+    }
+    .content .textBox a {
+       font-size: 0.8em;
+       font-weight: 700;
+       padding: 10px;
+    }
+    .content .imgBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+        margin-top: 50px;
+    }
+    .content .imgBox img {
+        max-width: 150px;
+    }
+    .thumbnail li img {
+        max-width: 30px;
+    }
+}
